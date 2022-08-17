@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localstorage</title>
+</head>
+<body>
+    <script>
+// localStorage.setItem('myCat', 'Tom');
+// const cat = localStorage.getItem('myCat');
+// console.log(cat)
+   
+//   localStorage.removeItem("name")
+// localStorage.setItem("Name","SAifur rhaman sajjad");
+//   const person=localStorage.getItem("Name");
+
+// localStorage.setItem("user","12345678")
+
+// const value=localStorage.getItem("user");
+
+// localStorage.removeItem("user")
+
+
+//    const countries=["bangladesh ","india","new-zeland"]
+//    localStorage.setItem("array",JSON.stringify(countries))
+//    const value=JSON.parse(localStorage.getItem("array"))
+//    console.log(value)
+
+//session storage/
+
+// sessionStorage.setItem("user","12345678")
+
+// const value=sessionStorage.getItem("user");
+
+//session  storage object//
+
+const countries=[{
+    name:"sajjad",
+    roll:482907
+}]
+   sessionStorage.setItem("array",JSON.stringify(countries))
+   const value=JSON.parse(sessionStorage.getItem("array"))
+   console.log(value)
+
+    </script>
+</body>
+</html>

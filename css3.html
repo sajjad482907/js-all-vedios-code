@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        :root{
+            --color:pink;
+        }
+
+        :root{
+            --color2:grey;
+        }
+
+   .div1{
+   background-color: var( --color);
+    height: 200px;
+   width: 250px;
+  position: absolute;
+  z-index: 1;
+    }
+
+    
+     .div2{
+   background-color: var( --color2);
+   position: absolute;
+        height: 200px;
+   width: 250px;
+   z-index: -1;
+   left: 150px;
+   top: 100px;
+
+        
+}
+
+
+
+    </style>
+</head>
+<body>
+
+
+    
+    <script>
+
+        function person(name,old){
+
+     this.name=name;
+     this.age=old;
+
+     this.geet=function(){
+
+        console.log(this.name
+        +
+      "my old is " + this.age
+        )
+     }
+
+
+        }
+
+    var new1=new person("mohammad saifur  rhaman . ",20);
+    new1.geet();
+    </script>
+    
+</body>
+</html>
+
+
+
+

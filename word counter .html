@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Word Counter</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   
+<h1>Word Counter</h1>
+    <label for="text">Enter some text below:</label>
+    <textarea id="text" rows="10" cols="60"></textarea>
+    <div id="stat">You've written 0 words and 0 characters.</div>
+    <script src="js/word-counter.js"></script>
+    <script>class WordCounter {
+        constructor(inputText) {
+            this.inputText = inputText;
+            this.inputText.addEventListener('input', () => {
+                this.count();
+            });
+        }
+        count() {
+            let wordStat = this.getWordStat(this.inputText.value.trim());
+            this.emitEvent(wordStat);
+        }
+    
+        emitEvent(wordStat) {
+            // Create count event
+            let countEvent = new CustomEvent('count', {
+                bubbles: true,
+                cancelable: true,
+                detail: {
+                    wordStat
+                }
+            });
+            // dispatch the count event
+            this.inputText.dispatchEvent(countEvent);
+    
+        }
+        getWordStat(str) {
+            let matches = str.match(/\S+/g);
+            return {
+                characters: str.length,
+                words: matches ? matches.length : 0,
+            };
+        }
+    }
+
+
+    const inputText = document.querySelector('#text');
+   const statElem = document.querySelector('#stat');
+    </script>
+</body>
+</html>
